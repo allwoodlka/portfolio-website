@@ -1,4 +1,10 @@
 <template>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
   <page-title title="Get in Touch"></page-title>
   <p>If you want to get in touch with me, fill out this form with your information and I'll receive it in an email shortly after</p>
   <p>Don't forget to include a way for me to contact you back!</p>
@@ -18,11 +24,10 @@
     </div>
     <div class="p-col-6">
       <span style="color: orangered">Todo: ReCaptcha Here</span>
-      <form action="?" method="POST">
-        <div class="g-recaptcha" data-sitekey="6Leioe4bAAAAAGAtLiuxpWkt1mgccmO-9knqDt3p"></div>
-        <br/>
-        <input type="submit" value="Submit">
-      </form>
+      <button class="g-recaptcha"
+              data-sitekey="6Leioe4bAAAAAGAtLiuxpWkt1mgccmO-9knqDt3p"
+              data-callback='onSubmit'
+              data-action='submit'>Submit</button>
     </div>
     <div class="p-col-6">
       <Button label="Send" icon="pi pi-envelope" iconPos="right" style="max-width: 100%"/>
