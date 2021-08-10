@@ -5,7 +5,8 @@
   <br />
 
 
-  <form name="contactform" method="POST" data-netlify="true">
+  <form name="contactform" method="POST" netlify>
+    <input type="hidden" name="form-name" value="contactform" />
     <p>
       <label>Your Name: <input type="text" name="name" /></label>
     </p>
