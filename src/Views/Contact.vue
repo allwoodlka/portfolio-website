@@ -1,38 +1,30 @@
 <template>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-    function onSubmit(token) {
-      document.getElementById("demo-form").submit();
-    }
-  </script>
   <page-title title="Get in Touch"></page-title>
   <p>If you want to get in touch with me, fill out this form with your information and I'll receive it in an email shortly after</p>
   <p>Don't forget to include a way for me to contact you back!</p>
   <br />
-  <div class="p-fluid p-formgrid p-grid">
-    <div class="p-field p-col-6">
-      <label for="name">Name</label>
-      <InputText id="name" type="text" />
+  <form ref="formref" name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-6">
+        <label for="name">Name</label>
+        <InputText id="name" type="text" />
+      </div>
+      <div class="p-field p-col-6">
+        <label for="contact">Preferred Contact</label>
+        <InputText id="contact" type="text" />
+      </div>
+      <div class="p-field p-col-12">
+        <label for="message">Message</label>
+        <Textarea id="message" rows="4" />
+      </div>
+      <div class="p-col-6">
+        <div data-netlify-recaptcha="true"></div>
+      </div>
+      <div class="p-col-6">
+        <Button @click="submitForm" label="Send" icon="pi pi-envelope" iconPos="right" style="max-width: 100%"/>
+      </div>
     </div>
-    <div class="p-field p-col-6">
-      <label for="contact">Preferred Contact</label>
-      <InputText id="contact" type="text" />
-    </div>
-    <div class="p-field p-col-12">
-      <label for="message">Message</label>
-      <Textarea id="message" rows="4" />
-    </div>
-    <div class="p-col-6">
-      <span style="color: orangered">Todo: ReCaptcha Here</span>
-      <button class="g-recaptcha"
-              data-sitekey="6Leioe4bAAAAAGAtLiuxpWkt1mgccmO-9knqDt3p"
-              data-callback='onSubmit'
-              data-action='submit'>Submit</button>
-    </div>
-    <div class="p-col-6">
-      <Button label="Send" icon="pi pi-envelope" iconPos="right" style="max-width: 100%"/>
-    </div>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -44,6 +36,11 @@ export default {
   name: 'Contact',
   components: {
     PageTitle,
+  },
+  methods: {
+    submitForm(){
+      this.$refs.formref.submit();
+    }
   }
 }
 </script>
