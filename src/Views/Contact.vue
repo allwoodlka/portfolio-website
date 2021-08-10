@@ -18,6 +18,11 @@
     </div>
     <div class="p-col-6">
       <span style="color: orangered">Todo: ReCaptcha Here</span>
+      <form action="?" method="POST">
+        <div class="g-recaptcha" data-sitekey="6Leioe4bAAAAAGAtLiuxpWkt1mgccmO-9knqDt3p"></div>
+        <br/>
+        <input type="submit" value="Submit">
+      </form>
     </div>
     <div class="p-col-6">
       <Button label="Send" icon="pi pi-envelope" iconPos="right" style="max-width: 100%"/>

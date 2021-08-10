@@ -15,17 +15,17 @@
       </Fieldset>
     </div>
     <div class="p-col-12">
-      <Panel header="Sourcing Data from LINZ">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <Panel header="Sourcing Data">
+        <p>A decent portion of New Zealand has been mapped using high resolution Lidar (~6 elevation points / square metre) and the information is openly available online. I found the data I needed for this project via <a href="https://www.linz.govt.nz/data/linz-data/elevation-data" target="_blank">Land Information New Zealand</a>.</p>
       </Panel>
       <Panel header="Processing the Data">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lidar data are actually a collection points in 3D space. When viewing millions of points at once the result is a pseudo 3 dimensional surface.</p>
+        <video controls style="max-width: 100%" autoplay muted loop>
+          <source src="../../assets/3dLidarScreencapture.webm" type="video/webm">
+          <p>Your browser does not support video</p>
+        </video>
+        <p>To transform this data into a 2D surface, I made use of <a href="https://www.opentopography.org/" target="_blank">Open Topography's</a> free tools to render the Lidar data as a 2D surface. Ideal for our map.</p>
+        <img alt="2D Render of Lidar Data" src="../../assets/lidar-farm-map-project/lidar-2d-render.png" style="max-width:100%" class="p-shadow-3">
       </Panel>
       <Panel header="Adding Map Features">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
