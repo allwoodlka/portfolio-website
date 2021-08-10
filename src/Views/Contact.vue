@@ -3,17 +3,6 @@
   <p>If you want to get in touch with me, fill out this form with your information and I'll receive it in an email shortly after</p>
   <p>Don't forget to include a way for me to contact you back!</p>
   <br />
-
-  <form name="ask-question"
-        method="post" netlify netlify-honeypot="bot-field">
-    <input type="text" name="name" />
-    <input type="radio" name="panelist" />
-    <textarea name="question"></textarea>
-    <button type="submit">Send</button>
-  </form>
-
-
-
   <form ref="formref" name="contact" method="POST" data-netlify-recaptcha="true" data-netlify="true">
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-6">
