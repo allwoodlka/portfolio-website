@@ -4,7 +4,7 @@
   <p>Don't forget to include a way for me to contact you back!</p>
   <br />
 
-  <form ref="formref" name="contactform" method="POST" id="contactForm" netlify>
+  <form ref="formref" name="contactform" method="POST" id="contactForm" netlify data-netlify-recaptcha="true">
     <input type="hidden" name="form-name" value="contactform" />
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-6">
