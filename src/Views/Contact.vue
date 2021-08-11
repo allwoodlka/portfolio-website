@@ -4,20 +4,23 @@
   <p>Don't forget to include a way for me to contact you back!</p>
   <br />
 
-  <form ref="formref" name="contactform" method="POST" netlify>
+  <form ref="formref" name="contactform" method="POST" id="contactForm" netlify>
     <input type="hidden" name="form-name" value="contactform" />
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-6">
         <label for="name">Name</label>
-        <InputText id="name" type="text" />
+        <InputText id="name" type="text" v-model="nameVal" />
+        <input type="text" name="name" :value="nameVal" class="p-d-none" />
       </div>
       <div class="p-field p-col-6">
         <label for="contact">Preferred Contact</label>
-        <InputText id="contact" type="text" />
+        <InputText id="contact" type="text" v-model="contactVal" />
+        <input type="text" name="contact" :value="contactVal" class="p-d-none" />
       </div>
       <div class="p-field p-col-12">
         <label for="message">Message</label>
-        <Textarea id="message" rows="4" />
+        <Textarea id="message" rows="4" v-model="messageVal" />
+        <textarea name="message" :value="messageVal" class="p-d-none" />
       </div>
       <div class="p-col-6">
         <div data-netlify-recaptcha="true"></div>
@@ -27,7 +30,6 @@
       </div>
     </div>
   </form>
-
 
 </template>
 
@@ -40,6 +42,14 @@ export default {
   name: 'Contact',
   components: {
     PageTitle,
+  },
+  data(){
+    return{
+      nameVal: null,
+      contactVal: null,
+      messageVal: null,
+
+    }
   },
   methods: {
     submitForm(){
