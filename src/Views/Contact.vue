@@ -4,21 +4,28 @@
   <p>Don't forget to include a way for me to contact you back!</p>
   <br />
 
-
-  <form name="contactform" method="POST" netlify>
+  <form ref="formref" name="contactform" method="POST" netlify data-netlify-recaptcha="true">
     <input type="hidden" name="form-name" value="contactform" />
-    <p>
-      <label>Your Name: <input type="text" name="name" /></label>
-    </p>
-    <p>
-      <label>Your Email: <input type="text" name="email" /></label>
-    </p>
-    <p>
-      <label>Message: <textarea name="message"></textarea></label>
-    </p>
-    <p>
-      <button type="submit">Send</button>
-    </p>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-6">
+        <label for="name">Name</label>
+        <InputText id="name" type="text" />
+      </div>
+      <div class="p-field p-col-6">
+        <label for="contact">Preferred Contact</label>
+        <InputText id="contact" type="text" />
+      </div>
+      <div class="p-field p-col-12">
+        <label for="message">Message</label>
+        <Textarea id="message" rows="4" />
+      </div>
+      <div class="p-col-6">
+        <div data-netlify-recaptcha="true"></div>
+      </div>
+      <div class="p-col-6">
+        <Button @click="submitForm" label="Send" icon="pi pi-envelope" iconPos="right" style="max-width: 100%"/>
+      </div>
+    </div>
   </form>
 
 
