@@ -4,7 +4,7 @@
   <p>Don't forget to include a way for me to contact you back!</p>
   <br />
 
-  <form ref="formref" name="contactform" method="POST" id="contactForm" netlify data-netlify-recaptcha>
+  <form ref="formref" name="contactform" method="POST" id="contactForm" netlify netlify-honeypot="liam">
     <input type="hidden" name="form-name" value="contactform" />
     <div class="p-fluid p-formgrid p-grid">
       <div class="p-field p-col-6">
@@ -23,7 +23,7 @@
         <textarea name="message" :value="messageVal" class="p-d-none" />
       </div>
       <div class="p-col-6">
-        <div data-netlify-recaptcha="true"></div>
+        <input name="liam" class="p-d-none" />
       </div>
       <div class="p-col-6">
         <Button @click="submitForm" label="Send" icon="pi pi-envelope" iconPos="right" style="max-width: 100%"/>
